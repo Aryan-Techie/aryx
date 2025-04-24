@@ -1,4 +1,4 @@
-# AROICE Artist Landing Page
+# ARYX Artist Landing Page
 
 ## Overview
 
