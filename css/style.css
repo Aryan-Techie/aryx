@@ -24,6 +24,27 @@ a {
     padding: 0 20px;
 }
 
+/* Image Optimizations */
+.artist-image, .track-image {
+    will-change: transform;
+    backface-visibility: hidden;
+    transition: opacity 0.3s ease;
+}
+
+.track-image {
+    opacity: 0.3;
+}
+
+.track-image.loaded {
+    opacity: 1;
+}
+
+/* Content-visibility optimizations for offscreen content */
+section:not(.hero) {
+    content-visibility: auto;
+    contain-intrinsic-size: 1px 500px;
+}
+
 /* Header Styles */
 header {
     display: flex;

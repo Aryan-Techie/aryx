@@ -1,5 +1,33 @@
 // Wait for the DOM to be fully loaded
 document.addEventListener('DOMContentLoaded', function() {
+    // Preload hero image
+    const preloadHeroImage = () => {
+        // If we're on mobile, load the smaller version first
+        const isMobile = window.innerWidth < 768;
+        const imgElement = document.querySelector('.artist-image');
+        
+        if (imgElement) {
+            // Set up Intersection Observer for non-critical images
+            const trackImage = document.querySelector('.track-image');
+            if (trackImage) {
+                const lazyImageObserver = new IntersectionObserver((entries, observer) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            const img = entry.target;
+                            img.classList.add('loaded');
+                            observer.unobserve(img);
+                        }
+                    });
+                });
+                
+                lazyImageObserver.observe(trackImage);
+            }
+        }
+    };
+    
+    // Call preload function immediately
+    preloadHeroImage();
+
     // Add smooth scrolling for all anchor links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function(e) {

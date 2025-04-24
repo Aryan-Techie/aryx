@@ -17,6 +17,9 @@
     <meta property="og:url" content="https://aryx.aroice.in">
     <meta property="og:image" content="assets/unread.jpg">
     
+    <!-- Preload critical image -->
+    <link rel="preload" href="assets/unread.jpg" as="image" type="image/jpeg">
+    
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="assets/unread.jpg">
     
@@ -68,7 +71,7 @@
             </div>
             <div class="hero-image">
                 <div class="artist-image-container">
-                    <img src="assets/unread.jpg" alt="ARYX - pfp" class="artist-image">
+                    <img src="assets/unread.jpg" alt="ARYX - pfp" class="artist-image" width="350" height="350" fetchpriority="high">
                 </div>
             </div>
         </section>
@@ -78,7 +81,7 @@
             <h2 class="section-title">FEATURED TRACK</h2>
             <div class="track-container">
                 <div class="track-artwork">
-                    <img src="assets/unread.jpg" alt="Track Artwork" class="track-image">
+                    <img src="assets/unread.jpg" alt="Track Artwork" class="track-image" width="200" height="200" loading="lazy">
                     <div class="play-overlay">
                         <a href="https://open.spotify.com/track/0wKXfxTHvIYNF4xYgy8pFF" target="_blank" class="play-button">
                             <i class="fas fa-play"></i>
